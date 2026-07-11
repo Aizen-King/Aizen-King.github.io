@@ -1,0 +1,393 @@
+/* ==========================================================
+   Aizen Personal Website
+   Design System
+   ========================================================== */
+
+/* =========================
+   颜色变量
+   ========================= */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:
+
+    Inter,
+
+    "Noto Sans SC",
+
+    "Microsoft YaHei",
+
+    sans-serif;
+
+}
+
+:root{
+
+    /* 主背景 */
+
+    --bg:#090B14;
+
+    /* 卡片背景 */
+
+    --card:#261735;
+
+    /* 紫色 */
+
+    --primary:#7A5AF8;
+
+    /* 绯红 */
+
+    --accent:#D94F70;
+
+    /* 高亮 */
+
+    --highlight:#8E6BFF;
+
+    /* 主文字 */
+
+    --text:#C9C0CB;
+
+    /* 次文字 */
+
+    --text-light:#A89CAF;
+
+    /* 边框 */
+
+    --border:rgba(255,255,255,.08);
+
+    /* Page background overlay */
+    --page-overlay:linear-gradient(rgba(9,11,20,.52),rgba(9,11,20,.52));
+
+}
+
+/* ==========================================================
+   Aizen Website Background
+   ========================================================== */
+
+body {
+
+    background-color:var(--bg);
+    background-image:var(--page-bg,none);
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+}
+
+/* ==========================================================
+   科技网格背景
+   ========================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 48px 48px;
+
+    opacity: .45;
+
+    z-index: -1;
+
+}
+
+/* ==========================================================
+   左右 Glow
+   ========================================================== */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(120,90,255,.18),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 82% 58%,
+            rgba(255,70,120,.14),
+            transparent 30%
+        );
+
+    z-index: -2;
+
+}
+
+/* =========================
+   导航栏
+   ========================= */
+
+#nav{
+
+    background:rgba(12,14,24,.45)!important;
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+/* 导航文字 */
+
+#nav a{
+
+    color:#fff!important;
+
+}
+
+#nav a:hover{
+
+    color:#fff!important;
+
+}
+
+body,
+body :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a,
+    li,
+    dt,
+    dd,
+    label,
+    time,
+    strong,
+    b,
+    small,
+    em,
+    blockquote,
+    figcaption,
+    .page-title,
+    .article-sort-item-title,
+    .article-sort-item-time,
+    .article-meta,
+    .article-meta-label,
+    .article-meta-wrap,
+    .recent-post-info,
+    .recent-post-info a,
+    .site-data,
+    .card-info,
+    .card-widget,
+    .headline,
+    .item-name,
+    .item-count,
+    .footer-copyright,
+    .footer_custom_text,
+    .title-seo,
+    .page,
+    .article-sort,
+    .article-sort-item,
+    .recent-post-item,
+    .card,
+    .card-widget,
+    .post-block,
+    .post-copyright,
+    .note,
+    .tag-cloud-list,
+    .timeline,
+    .gallery-group-main,
+    .gallery-container
+) {
+
+    color:var(--text);
+
+}
+
+/* ==========================================================
+   Crimson Cards
+   ========================================================== */
+
+:is(
+    .card,
+    .card-widget,
+    .recent-post-item,
+    .article-sort-item,
+    #page,
+    #archive,
+    #category,
+    .page,
+    .post-block,
+    .post-copyright,
+    .note,
+    .tag-cloud-list,
+    .timeline,
+    .gallery-group-main,
+    .gallery-container
+) {
+
+    background:linear-gradient(180deg,#2c183d 0%,#23122f 100%) !important;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 16px 50px rgba(0,0,0,.24);
+    backdrop-filter:blur(16px);
+
+}
+
+:is(
+    .card,
+    .card-widget,
+    .recent-post-item,
+    .article-sort-item,
+    #page,
+    #archive,
+    #category,
+    .page,
+    .post-block,
+    .post-copyright,
+    .note,
+    .tag-cloud-list,
+    .timeline,
+    .gallery-group-main,
+    .gallery-container
+):hover {
+
+    border-color:rgba(255,255,255,.14);
+    box-shadow:0 20px 70px rgba(0,0,0,.3);
+
+}
+
+body.page-home {
+
+    --page-bg:var(--page-overlay),url("/img/home/home-bg.png");
+
+}
+
+body.page-learning {
+
+    --page-bg:var(--page-overlay),url("/img/learning/learning-bg.jpg");
+
+}
+
+body.page-gallery {
+
+    --page-bg:var(--page-overlay),url("/img/gallery/gallery-bg.png");
+
+}
+
+/* ==========================================================
+   Hero
+   ========================================================== */
+
+.aizen-home{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    color:white;
+
+    margin-bottom:24px;
+
+}
+
+.hero p{
+
+    font-size:24px;
+
+    color:#d8d8d8;
+
+    margin-bottom:48px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:24px;
+
+}
+
+.hero-buttons a{
+
+    padding:16px 42px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(16px);
+
+    background:rgba(255,255,255,.06);
+
+    transition:.3s;
+
+}
+
+.hero-buttons a:hover{
+
+    background:#7A5AF8;
+
+}

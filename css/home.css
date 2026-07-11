@@ -1,0 +1,187 @@
+/* ==========================================================
+   Aizen Home Hero Style
+   ========================================================== */
+
+
+/* ==========================================================
+   Local Font
+   ========================================================== */
+
+
+@font-face {
+
+    font-family: "AizenFont";
+
+    src: url("/fonts/AizenFont.ttf") format("truetype");
+
+    font-weight: normal;
+
+    font-style: normal;
+
+    font-display: swap;
+
+}
+
+
+/* ==========================================================
+   Hero Container
+   ========================================================== */
+
+
+/* Butterfly 首页信息区域 */
+
+#site-info {
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center !important;
+
+}
+
+#site-info,
+#site-title,
+.nav-site-title .site-name {
+
+    font-family:"AizenFont",sans-serif !important;
+
+}
+
+
+/* ==========================================================
+   Left Top Title
+   JOJO
+   ========================================================== */
+
+
+.nav-site-title .site-name {
+
+    position:relative;
+    display:inline-block;
+    color:transparent !important;
+    font-size:0 !important;
+    line-height:1;
+
+}
+
+
+.nav-site-title .site-name::after {
+
+    content:"JOJO";
+    display:inline-block;
+    color:#fff;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:2px;
+    line-height:1;
+
+}
+
+
+/* ==========================================================
+   Main Title
+   I'm Aizen
+   ========================================================== */
+
+
+#site-title {
+
+    position:relative;
+    display:inline-block;
+    font-size:72px !important;
+    font-weight:700;
+    letter-spacing:8px;
+    line-height:1.2;
+    background:linear-gradient(135deg,#24103f 0%,#5f3cb7 52%,#c9a7ff 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent !important;
+    filter:drop-shadow(0 0 20px rgba(160,100,255,.65));
+    animation:titleGlow 3s ease-in-out infinite alternate;
+
+}
+
+
+#site-title::after {
+
+    content:"\AWelcome to my Soul Society";
+    display:block;
+    white-space:pre;
+    margin-top:25px;
+    font-size:30px;
+    letter-spacing:5px;
+    color:rgba(240,232,255,.95);
+    filter:drop-shadow(0 0 18px rgba(95,60,183,.45));
+
+}
+
+
+/* ==========================================================
+   Subtitle
+   Welcome to my Soul Society
+   ========================================================== */
+
+
+/* Butterfly 新版本 */
+
+
+#site-subtitle,
+.site-subtitle {
+
+    display:none !important;
+
+}
+
+
+/* ==========================================================
+   Glow Animation
+   ========================================================== */
+
+
+@keyframes titleGlow {
+
+    from {
+
+        filter:drop-shadow(0 0 15px rgba(70,40,150,.45));
+
+    }
+
+    to {
+
+        filter:drop-shadow(0 0 40px rgba(159,112,255,.7));
+
+    }
+
+}
+
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+
+@media screen and (max-width:768px){
+
+    .nav-site-title .site-name::after {
+
+        font-size:18px;
+
+    }
+
+    #site-title {
+
+        font-size:45px !important;
+        letter-spacing:4px;
+
+    }
+
+    #site-title::after {
+
+        font-size:20px;
+        letter-spacing:2px;
+        margin-top:18px;
+
+    }
+
+}

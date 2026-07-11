@@ -1,0 +1,158 @@
+/* ==========================================================
+   Aizen Hero Background
+   ========================================================== */
+
+
+#page-header {
+
+    background:
+
+    radial-gradient(
+        circle at 15% 50%,
+        rgba(122,90,248,.45),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at 85% 50%,
+        rgba(217,79,112,.45),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        90deg,
+        #090B14,
+        #25164A,
+        #7A294F
+    ) !important;
+
+
+}
+
+
+/* 粒子 */
+
+#page-header::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    pointer-events:none;
+
+
+    background-image:
+
+
+    radial-gradient(circle at 12% 22%, rgba(255,255,255,.95) 0 1px, transparent 1.6px),
+
+
+    radial-gradient(circle at 28% 70%, rgba(255,255,255,.85) 0 1px, transparent 1.8px),
+
+
+    radial-gradient(circle at 46% 18%, rgba(255,255,255,.7) 0 1.2px, transparent 2px),
+
+
+    radial-gradient(circle at 63% 44%, rgba(255,255,255,.9) 0 1px, transparent 1.7px),
+
+
+    radial-gradient(circle at 78% 76%, rgba(255,255,255,.8) 0 1.2px, transparent 2px),
+
+
+    radial-gradient(circle at 90% 28%, rgba(255,255,255,.65) 0 1px, transparent 1.7px),
+
+
+    radial-gradient(circle at 18% 86%, rgba(255,143,163,.9) 0 1.2px, transparent 2px),
+
+
+    radial-gradient(circle at 52% 62%, rgba(122,90,248,.9) 0 1.2px, transparent 2px),
+
+
+    radial-gradient(circle at 84% 16%, rgba(217,79,112,.85) 0 1.2px, transparent 2px);
+
+
+    background-size:100% 100%;
+
+
+    opacity:.9;
+
+
+    mix-blend-mode:screen;
+
+
+    animation:particleFloat 10s ease-in-out infinite alternate;
+
+
+}
+
+
+@keyframes particleFloat {
+
+
+    0% {
+
+
+        transform:translate3d(0,0,0) scale(1);
+
+
+        opacity:.65;
+
+
+    }
+
+
+    100% {
+
+
+        transform:translate3d(0,-12px,0) scale(1.04);
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+/* 网格 */
+
+#page-header::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background-image:
+
+
+    linear-gradient(
+        rgba(255,255,255,.04) 1px,
+        transparent 1px
+    ),
+
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.04) 1px,
+        transparent 1px
+    );
+
+
+    background-size:50px 50px;
+
+
+}

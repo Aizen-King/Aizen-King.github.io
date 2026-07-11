@@ -1,0 +1,188 @@
+/* ==========================================================
+   Aizen Design System v1.0
+   ========================================================== */
+
+:root{
+
+    /* ===== Brand Colors ===== */
+
+    --primary:#7A5AF8;
+    --accent:#D94F70;
+
+    /* ===== Background ===== */
+
+    --bg:#090B14;
+    --bg-secondary:#13192A;
+
+    /* ===== Card ===== */
+
+    --card:#261735;
+
+    /* ===== Text ===== */
+
+    --text:#F5F7FA;
+    --text-light:#B8C0D4;
+
+    /* ===== Border ===== */
+
+    --border:rgba(255,255,255,.08);
+
+    /* ===== Radius ===== */
+
+    --radius:18px;
+
+    /* ===== Shadow ===== */
+
+    --shadow:
+        0 10px 40px rgba(0,0,0,.35);
+
+    /* ===== Animation ===== */
+
+    --transition:.3s ease;
+
+}
+
+/* ==========================================================
+   Typography
+   ========================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        "Noto Sans SC",
+        "Microsoft YaHei",
+        sans-serif;
+
+    color: var(--text);
+
+    line-height: 1.8;
+}
+
+/* ==========================================================
+   Link
+   ========================================================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================
+   Button
+   ========================================================== */
+
+.btn {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 14px 34px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(18px);
+
+    transition: var(--transition);
+
+}
+
+.btn:hover {
+
+    background: var(--primary);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ==========================================================
+   Button
+   ========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 34px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    color:var(--text);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(122,90,248,.25);
+
+    border-color:#7A5AF8;
+
+}
+
+/* ==========================================================
+   Card
+   ========================================================== */
+
+.card{
+
+    background:linear-gradient(180deg,#2c183d 0%,#23122f 100%);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 12px 45px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,255,255,.14);
+
+}
+
+/* ==========================================================
+   Container
+   ========================================================== */
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
