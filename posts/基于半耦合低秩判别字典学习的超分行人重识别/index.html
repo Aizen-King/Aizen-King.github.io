@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我的笔记 | I'm Aizen</title><meta name="author" content="Aizen"><meta name="copyright" content="Aizen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="引言由于行人重识别在监视和取证方面应用的重要性，其已被广泛研究。在现实中，图库图像是高分辨率的，而受强照明、天气、摄像机质量影响下的探针图像通常是低分辨率的，在这种情况下的行人重识别，我们称之为的超分行人重识别还没有得到很好的研究。在本文中，我们提出了一种半耦合低秩判别字典学习（SLD 2L）的超分行人重识别方法。对于由高分辨率图库和低分辨率探针图像组成的给定训练图像集，我们致力于转化高分辨图像的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的笔记">
+<meta property="og:url" content="https://aizen-king.github.io/posts/%E5%9F%BA%E4%BA%8E%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/">
+<meta property="og:site_name" content="I&#39;m Aizen">
+<meta property="og:description" content="引言由于行人重识别在监视和取证方面应用的重要性，其已被广泛研究。在现实中，图库图像是高分辨率的，而受强照明、天气、摄像机质量影响下的探针图像通常是低分辨率的，在这种情况下的行人重识别，我们称之为的超分行人重识别还没有得到很好的研究。在本文中，我们提出了一种半耦合低秩判别字典学习（SLD 2L）的超分行人重识别方法。对于由高分辨率图库和低分辨率探针图像组成的给定训练图像集，我们致力于转化高分辨图像的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aizen-king.github.io/img/avatar/avatar.jpg">
+<meta property="article:published_time" content="2026-07-11T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-13T10:42:33.004Z">
+<meta property="article:author" content="Aizen">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Learning">
+<meta property="article:tag" content="Photography">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aizen-king.github.io/img/avatar/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "我的笔记",
+  "url": "https://aizen-king.github.io/posts/%E5%9F%BA%E4%BA%8E%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/",
+  "image": "https://aizen-king.github.io/img/avatar/avatar.jpg",
+  "datePublished": "2026-07-11T04:00:00.000Z",
+  "dateModified": "2026-07-13T10:42:33.004Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Aizen",
+      "url": "https://aizen-king.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/"><link rel="canonical" href="https://aizen-king.github.io/posts/%E5%9F%BA%E4%BA%8E%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '我的笔记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/theme.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/home.css"><link rel="stylesheet" href="/css/hero.css"><meta name="generator" content="Hexo 8.1.2"></head><body class="page-post"><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/learning/"><span> Learning</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><span> Gallery</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">I'm Aizen</span></a><a class="nav-page-title" href="/"><span class="site-name">我的笔记</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/learning/"><span> Learning</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><span> Gallery</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">我的笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-11T04:00:00.000Z" title="发表于 2026-07-11 12:00:00">2026-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-13T10:42:33.004Z" title="更新于 2026-07-13 18:42:33">2026-07-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/learning/">learning</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>由于行人重识别在监视和取证方面应用的重要性，其已被广泛研究。在现实中，图库图像是高分辨率的，而受强照明、天气、摄像机质量影响下的探针图像通常是低分辨率的，在这种情况下的行人重识别，我们称之为的超分行人重识别还没有得到很好的研究。在本文中，我们提出了一种半耦合低秩判别字典学习（SLD <sup>2</sup>L）的超分行人重识别方法。对于由高分辨率图库和低分辨率探针图像组成的给定训练图像集，我们致力于转化高分辨图像的特征以判别低分辨率图像特征。确切的说，我们的方法是对高分辨率图像和低分辨率的字典组合以及高分辨率图库图像和低分辨率探针图像的特征映射进行学习。为了确保用于学习的字典和映射的转化特征具有良好的判别功能，我们设计了一个判别项，要求由低分辨率探针图像转化后的高分辨率图像特征应该接近来自同一行人的图库图像特征，同时与不同行人的图库图像特征相差甚远。除此之外，我们在字典学习过程中采用了低秩正则化，使得学习到的字典可以很好的描述高分辨率图像和低分辨率图像的内部特征空间。基于公开数据集的实验结果证明了 SLD <sup>2</sup>L 的有效性。</p>
+<h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a>1.绪论</h1><p>行人重识别在视频自动监控方面是一项基本的任务并且近些年已被广泛研究。给定由某个摄像机拍摄的某个行人的照片&#x2F;视频，重识别是通过由另一个不同的摄像机设备拍摄的图像&#x2F;视频识别该行人的过程。许多行人重识别的方法已被提出。这些方法大致可以分为两类：(1) 特征表示法：它们专注于寻找用于匹配的具有区分度和鲁棒性的特征表示。<u>文献 9 通过利用类信息克服大的类内外观变化</u>。文献 24 用于解决特征选择问题。文献 22 建议学习描述某个特定个体最具判别性的属性，<u>其中，显著性检测用于自动驱动 PTZ 摄像机聚焦于人体的特定部位</u>。(2) 远程学习方法：他们专注于寻找适合行人重识别的最佳距离度量。在文献 10 中，Hirzer 等人使用判别性马氏度量学习从属于不同摄像机样本对学习度量，<u>可以在一些松弛之后有效地解决</u>。在文献 14 从统计推断的角度，基于等价约束来学习距离度量。在文献 36 中，Zheng 等人采用概率相对距离比较 (RDC) 方法学习马氏距离度量。最近，行人重识别已引进字典学习技术。在文献 17 中，学习两个耦合的字典来桥接相机之间的人类外观变化。<br>以上方法在一定程度上减少了行人重识别领域的困难。在实践中，由于照明不足、恶劣天气、摄像机设备差甚至这些因素的复杂组合使得摄像机捕获的行人图像具有低分辨率。因此，行人重识别通常在低分辨率和高分辨率的行人图像之间完成。一种行人重识别场景是在白天照明充足的情况下捕获图库图像，同时在照明较差甚至夜晚捕获探针图像。另一种行人重识别场景是在正常天气下捕获图库图像，同时在雨雪天气下捕获探针图像。在这类场景下，捕获的图库图像具有高分辨率并且探针图像具有低分辨率。我们将在这类场景下的行人重识别称之为超分行人重识别。在大多数情况下，行人重识别依靠行人图像的视觉外观特征。然而，因为低分辨率导致视觉外观特征的丢失，所以现有的行人重识别方法不能很好地解决于高分辨和低分辨率行人图像之间的行人重识别问题。因此，研究超分行人重识别是有必要并且具有意义的。图 1 举例说明了超分行人重识别问题。<br>为了提高低分辨率图像的质量，近些年来许多超分方法已被提出 (文献 4、8、27)。字典学习在机器学习领域是一种高效的特征学习技术 (文献 11、30、37)。如今，一些基于超分的特征学习技术已经发展取得了令人满意的性能。在 29、28 中提出了用于超分的耦合字典学习模型，假设存在高分辨率和低分辨率图像的耦合字典，其中每对高分辨率和低分辨率块具有相同的稀疏表示。半耦合字典学习模型 (文献 25) 放宽了耦合字典学习模型的强假设，并且该模型学习了一个映射度量以捕获高分辨率和低分辨率空间之间的稀疏表示。然而，以上方法仅仅被用来改善人类视觉外观特征，而不是机器感知 (文献 32)，因此不能保证识别提升。</p>
+<h2 id="1-1-研究目的"><a href="#1-1-研究目的" class="headerlink" title="1.1 研究目的"></a>1.1 研究目的</h2><p>超分行人重识别是一项重要实践应用；然而，它并没有被很好的学习研究。现有的基于字典学习的超分恢复方法可以通过揭示高分辨率和低分辨率图像之间的关系提升低分辨率图像的质量。然而，这些方法揭示的是低分辨率和高分辨率图像的特征之间的关系，这些特征有利于人类感知，而不是识别。<br>在超分恢复工作的推动下，我们打算从行人重识别的角度揭示低分辨率与高分辨率图像特征之间的关系。我们引入半耦合字典学习技术来解决高分辨率行人重识别问题。但我们应该解决以下两个具体问题：(1) 半耦合字典学习是为了超分恢复而不是行人重识别设计的，如果我们直接将半耦合字典学习应用于超分行人重识别，学习到的字典对和映射矩阵讲没有所期望的判别性。(2) 因为行人图像通常含有噪声，所以通过半耦合字典学习直接学习到的字典对不能很好描述低分辨率与高分辨率之间的判别特征空间。</p>
+<h2 id="1-2-研究内容"><a href="#1-2-研究内容" class="headerlink" title="1.2 研究内容"></a>1.2 研究内容</h2><p>本文主要工作内容概括如下：<br>(1) 我们首先尝试解决超分行人重识别问题并且提出了半耦合低秩判别字典学习方法。SLD <sup>2</sup>L 从高分辨率与低分辨率图像特征中学习高分辨率与低分辨率字典对和映射函数，通过学习到的字典对和映射函数，低分辨率的图像特征可以转换为具有判别性的高分辨率图像特征。<br>(2) 为了保证通过学习到的字典对和映射转换而来的特征具有良好判别能力，我们为半耦合字典学习设置了一个判别项，该判别项使得由低分辨率探针图像转化后的高分辨率图像特征应该接近来自同一行人的图库图像特征，同时与不同行人的图库图像特征相差甚远。<br>(3) 为了保证学习到的字典对可以很好的描述高分辨率图像和低分辨率图像的内部特征空间，我们将低秩正则化引入到半耦合字典学习之中。目前为止，低秩正则化技术尚未应用于现有项目中的半耦合字典学习。</p>
+<h1 id="2-相关工作简述"><a href="#2-相关工作简述" class="headerlink" title="2. 相关工作简述"></a>2. 相关工作简述</h1><p>在本章节中，我们简要回顾一下相关的耦合或半耦合字典学习方法，包括 SSCDL (文献 17) 和 SCDL (文献 25) 。然后，讨论了我们的方法和所给的相关方法之间的差异。</p>
+<h2 id="2-1-用于行人重识别的半监督耦合字典学习（SSCDL）"><a href="#2-1-用于行人重识别的半监督耦合字典学习（SSCDL）" class="headerlink" title="2.1 用于行人重识别的半监督耦合字典学习（SSCDL）"></a>2.1 用于行人重识别的半监督耦合字典学习（SSCDL）</h2><p>假定 x&#x3D;{x 1, x 2, ……xn}和 y&#x3D;{y 1, y 2, ……yn}是来自两个不同相机的两组训练数据。为了桥接不同相机间的人类外观，SSCDL使用画廊和探测摄像机中的行人标记对以及未标记人员来共同学习耦合字典对。具体来说，具体来说，SSCDL 学习两个字典 Dx 和 Dy，使得 Dx 表示的稀疏表示 α(xi) 应该与 D 表示的 α(yi) 相同。SSCDL 的目标函数如下：……，其中 α (s) 是标记图像对的共享系数矩阵，α (x) 和 α (y) 分别是来自两个摄像机的未标记图像的系数矩阵</p>
+<h2 id="2-2-半耦合字典学习（SCDL）"><a href="#2-2-半耦合字典学习（SCDL）" class="headerlink" title="2.2 半耦合字典学习（SCDL）"></a>2.2 半耦合字典学习（SCDL）</h2><p>SCDL 用来解决图像超分恢复和照片素描合成。假定存在一个字典对，两种风格的表示在该字典对上具有稳定的映射，SCDL 同时学习一对字典对和一个映射函数。SCDL 否目标函数如下：……，X 和 Y 表示的是由两中不同分辨率（或风格）图像块对构建的训练数据集。γ; λx; λy; λW 是平衡目标函数中各项的正则化参数。Dx; i, dy; i 分别是 Dx 和 Dy 的最小单元。 Λx 和Λy 是编码系数。 W 是映射矩阵。</p>
+<h2 id="2-3-与相关工作的对比"><a href="#2-3-与相关工作的对比" class="headerlink" title="2.3 与相关工作的对比"></a>2.3 与相关工作的对比</h2><p>与 SSCDL 的对比：SSCDL 用于行人重识别，它基于一个强假定，即两个摄像机之间存在耦合字典对，并且来自不同摄像机的同一个人的图像必须具备相同的稀疏表示。而我们的方法是为高分辨率和低分辨率行人图像之间的行人重识别设计的。我们的方法旨在学习一对高分辨率和低分辨率字典，其中每对高分辨率和低分辨率块都有一个映射。<br>与 SCDL 的对比：SCDL 用于图像超分恢复和照片素描合成而不是识别。学习到的字典和映射不具备良好的判别能力。而我们的方法用于超分行人重识别。我们设计了一个判别项加强学习到的字典对和映射的判别能力。除此之外，我们引进了低秩矩阵恢复使得半耦合字典学习能够更好的描述高分辨率与低分辨率图像的内部特征空间。</p>
+<h1 id="3-半耦合低秩判别字典学习"><a href="#3-半耦合低秩判别字典学习" class="headerlink" title="3. 半耦合低秩判别字典学习"></a>3. 半耦合低秩判别字典学习</h1><p>在本章节，我们首先描述问题的表述，然后提供所提方法的优化。</p>
+<h2 id="3-1-问题描述"><a href="#3-1-问题描述" class="headerlink" title="3.1 问题描述"></a>3.1 问题描述</h2><p>假设 CA 是来自摄像机 A 的高分辨率行人图像集，CB 是来自摄像机 B 的低分辨率行人图像集，我们的目标是学习一对高分辨率和低分辨率字典以及高分辨率和低分辨率图像特征之间的映射函数，使得 CB 中低分辨率图像的特征可以转换为可区分的高分辨率特征。<br>为此，我们首先通过执行下采样和平滑操作生成 CA 的低分辨率版本，其分辨率与 CB 相同，记为 C 1 A。通过这种方式，高分辨率和低分辨率图像之间的潜在关系可以被揭示。接下来我们利用半耦合字典学习来学习一对高分辨率和低分辨率字典以及 CA 和 C 1 A 对应特征之间的映射矩阵。因为直接通过半耦合字典学习学习到的字典和映射矩阵不具备判别能力，所以我们需要 CB 图像中的高分辨率特征，这些特征是是使用学习到的字典对和映射矩阵重建的，应该与 CA 中同一人的图像特征接近，但与 CA 中不同人的图像特征相差甚远。<br>实际上，低分辨率对不同的块有不同的影响，例如，纯色块的影响较小，而纹理复杂的块影响较大。因此，学习一个通用的映射函数不足以捕捉所有的关系。直观来将，我们可以将图像划分为块并且将块分组为几个集合，然后可以使每一个集合学习一对高分辨率和低分辨率子字典和更稳定的映射函数。在本文中，我们根据块特征的相似性，使用 K-means 算法（文献 7）对 C 1 A 和 CB 中的块进行分组。然后， CA 中的块根据 C 0 A 中相应块的集合结果进行分组。我们要求每个特定集合的子字典对于来自相关集合的块具有良好的表示能力，但是对于其他集合的表示能力较差。DiH 和 DiL 分别表示第 i 个集合的高分辨率和低分辨子字典。Vi 表示第 i 个集合的映射。通过分别组合高分辨率和低分辨率子字典，我们可以得到结构化的高分辨率和低分辨率字典，命名为……，其中 c 用来表示集合的个数。<br>为了确保学习到的子字典对可以很好的描述高分辨率和低分辨率图像之间的内部特征空间，在学习过程中，噪声应该从块中分离。考虑到来自同一集合的块是线性相关的，我们利用低秩矩阵恢复技术分离块中的噪声（文献 18、20、26）。图 2 说明了 SLD<sup>2</sup>的整体流程。…………</p>
+<h2 id="3-2-SLD2的优化"><a href="#3-2-SLD2的优化" class="headerlink" title="3.2 SLD2的优化"></a>3.2 SLD<sup>2</sup>的优化</h2><p>……</p>
+<h1 id="4-基于学习到的字典和映射的超分行人重识别"><a href="#4-基于学习到的字典和映射的超分行人重识别" class="headerlink" title="4. 基于学习到的字典和映射的超分行人重识别"></a>4. 基于学习到的字典和映射的超分行人重识别</h1><p>本节详细阐述利用学习到的 DH、DL 和{V 1、V 2……Vc} 进行超分行人重识别；假设 G&#x3D;{g1； g2； · · · ; gm }是高分辨率图库集合，p 是探针图像，在 G 中重新识别 p 的过程可以描述如下：<br>（1）转化低分辨率探针图像特征为高分辨率特征<br>首先，我们将 p 划分为 n 个块。yi 表示第 ith 个块的特征。我们计算 DL 上第 i 个块的表示系数，即 ai ，如下所示：……<br>其中 ei 表示噪声，然后，第 i 个块的集合索引 j 计算如下：……<br>通过集合 j 和 DH 的对应映射，yi 转化为的高分辨率特征为：……，最后，我们将 n 个块的高分辨率特征连接起来作为 p 的总高分辨率特征。<br>（2） 计算图库图像的重建特征<br>对于第 ith 个图库图像 gi，我们将 gi 分为 n 个块，用{X 1 、X 2…… Xn}表示 n 个块的特征集。然后我们计算每个块在 DH 上的表示系数如下：……<br>我们将 DHai 最为 Xi 的最新特征。通过连接 n 个块的新特征gi 的特征得到 gi 的特征。<br>（3）重识别图库图像中的探测图像<br>首先，我们利用得到的特征计算 p 和图库图像之间的差异。然后采用最近邻分类器进行匹配，距离最小的图库图像就是 p 的真实匹配。</p>
+<h1 id="5-实验结果"><a href="#5-实验结果" class="headerlink" title="5. 实验结果"></a>5. 实验结果</h1><h2 id="5-1"><a href="#5-1" class="headerlink" title="5.1"></a>5.1</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://aizen-king.github.io">Aizen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://aizen-king.github.io/posts/%E5%9F%BA%E4%BA%8E%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/">https://aizen-king.github.io/posts/%E5%9F%BA%E4%BA%8E%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://aizen-king.github.io" target="_blank">I'm Aizen</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Aizen</div><div class="author-info-description">A personal website for sharing learning notes and photography.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">1.绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%A0%94%E7%A9%B6%E7%9B%AE%E7%9A%84"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 研究目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 研究内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C%E7%AE%80%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">2. 相关工作简述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%94%A8%E4%BA%8E%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E8%80%A6%E5%90%88%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%EF%BC%88SSCDL%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 用于行人重识别的半监督耦合字典学习（SSCDL）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%8D%8A%E8%80%A6%E5%90%88%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%EF%BC%88SCDL%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 半耦合字典学习（SCDL）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 与相关工作的对比</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.</span> <span class="toc-text">3. 半耦合低秩判别字典学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-SLD2%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 SLD2的优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%9F%BA%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%88%B0%E7%9A%84%E5%AD%97%E5%85%B8%E5%92%8C%E6%98%A0%E5%B0%84%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">4. 基于学习到的字典和映射的超分行人重识别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">6.</span> <span class="toc-text">5. 实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1"><span class="toc-number">6.1.</span> <span class="toc-text">5.1</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/%E5%9F%BA%E4%BA%8E%E5%8D%8A%E8%80%A6%E5%90%88%E4%BD%8E%E7%A7%A9%E5%88%A4%E5%88%AB%E5%AD%97%E5%85%B8%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%B6%85%E5%88%86%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/" title="我的笔记">我的笔记</a><time datetime="2026-07-11T04:00:00.000Z" title="发表于 2026-07-11 12:00:00">2026-07-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/hello-world/" title="Hello World">Hello World</a><time datetime="2026-07-10T07:57:50.546Z" title="发表于 2026-07-10 15:57:50">2026-07-10</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Aizen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"></div><script src="/js/custom.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
