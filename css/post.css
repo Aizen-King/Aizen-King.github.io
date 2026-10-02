@@ -1,0 +1,175 @@
+/* ==========================================================
+   Aizen Post Reading Theme
+   墨玉 · 低眩光阅读配色
+
+   只作用于「笔记详情页」（#post / #article-container），
+   网站首页、Learning、Gallery、About 的配色完全不受影响。
+   ========================================================== */
+
+
+/* ==========================================================
+   阅读区域底色
+   ========================================================== */
+
+#post {
+
+    background:linear-gradient(180deg,#161D1F 0%,#101619 100%) !important;
+
+    border-radius:18px;
+
+}
+
+
+/* ==========================================================
+   标题 + 元信息（日期 / 分类）
+   ========================================================== */
+
+.post-title {
+
+    color:#F2F7F5 !important;
+
+    text-shadow:0 0 22px rgba(111,211,180,.25);
+
+}
+
+#post-meta,
+#post-meta * {
+
+    color:#8C9C98 !important;
+
+}
+
+
+/* ==========================================================
+   正文排版
+   ========================================================== */
+
+#article-container {
+
+    font-size:15.5px !important;
+
+    line-height:1.95 !important;
+
+    letter-spacing:.01em;
+
+}
+
+#article-container p {
+
+    margin:1.1em 0 !important;
+
+}
+
+#article-container,
+#article-container p,
+#article-container li,
+#article-container span,
+#article-container div,
+#article-container strong,
+#article-container b,
+#article-container em,
+#article-container figcaption,
+#article-container dt,
+#article-container dd {
+
+    color:#D8E2DE !important;
+
+}
+
+
+/* ==========================================================
+   小标题：左侧薄荷色竖线，二级标题带淡淡底色
+   ========================================================== */
+
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4 {
+
+    color:#F2F7F5 !important;
+
+    border-left-color:#6FD3B4 !important;
+
+    letter-spacing:.02em;
+
+}
+
+#article-container h2 {
+
+    background:rgba(111,211,180,.08) !important;
+
+}
+
+
+/* ==========================================================
+   链接 / 引用 / 分割线
+   ========================================================== */
+
+#article-container a {
+
+    color:#6FD3B4 !important;
+
+}
+
+#article-container blockquote {
+
+    background:rgba(111,211,180,.10) !important;
+
+    border-left:4px solid #6FD3B4 !important;
+
+    color:#C4D2CE !important;
+
+}
+
+#article-container hr {
+
+    border-color:rgba(255,255,255,.12) !important;
+
+}
+
+
+/* ==========================================================
+   代码 / 表格 / 图片
+   ========================================================== */
+
+#article-container code {
+
+    background:#0C1214 !important;
+
+    color:#A7E8CF !important;
+
+}
+
+#article-container pre,
+#article-container .highlight {
+
+    background:#0B1013 !important;
+
+    color:#D8E2DE !important;
+
+}
+
+#article-container table {
+
+    color:#D8E2DE;
+
+}
+
+#article-container th,
+#article-container td {
+
+    border-color:rgba(255,255,255,.12) !important;
+
+}
+
+#article-container tr:nth-child(2n) {
+
+    background:rgba(255,255,255,.03) !important;
+
+}
+
+#article-container img {
+
+    border-radius:12px;
+
+}
