@@ -1,0 +1,114 @@
+/* ==========================================================
+   Aizen Learning
+   学习笔记：文件夹层级 + 笔记列表
+   ========================================================== */
+
+.aizen-note-list {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin:6px 0 10px;
+
+}
+
+.aizen-note-item {
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:14px 20px;
+
+    border-radius:var(--radius,18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    transition:var(--transition,.3s ease);
+
+}
+
+.aizen-note-item::after {
+
+    content:"›";
+
+    margin-left:auto;
+
+    font-size:20px;
+
+    line-height:1;
+
+    color:var(--text-light,#B8C0D4);
+
+}
+
+.aizen-note-item:hover {
+
+    transform:translateX(6px);
+
+    border-color:rgba(255,255,255,.16);
+
+    background:rgba(122,90,248,.16);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+}
+
+.aizen-note-date {
+
+    font-size:13px;
+
+    color:var(--text-light,#B8C0D4);
+
+    white-space:nowrap;
+
+}
+
+.aizen-note-title {
+
+    font-size:16px;
+
+    color:var(--text,#F5F7FA);
+
+    word-break:break-word;
+
+}
+
+/* 子文件夹缩进，体现层级 */
+
+.aizen-folder .aizen-folder {
+
+    margin-left:18px;
+
+    padding-left:16px;
+
+    border-left:1px dashed rgba(255,255,255,.14);
+
+}
+
+@media screen and (max-width:768px) {
+
+    .aizen-note-item {
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:6px;
+
+    }
+
+    .aizen-note-date { font-size:12px; }
+
+    .aizen-note-item::after { display:none; }
+
+}

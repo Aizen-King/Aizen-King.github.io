@@ -20,6 +20,100 @@
    单张作品
    ========================================================== */
 
+/* 文件夹分组标题（Gallery / Learning 共用） */
+
+#page .aizen-group-title {
+
+    display:flex;
+
+    align-items:baseline;
+
+    gap:12px;
+
+    margin:32px 0 16px;
+
+    padding:0 0 0 14px;
+
+    border-left:4px solid var(--primary,#7A5AF8);
+
+    border-top:0;
+
+    border-right:0;
+
+    border-bottom:0;
+
+    background:none;
+
+    color:var(--text,#F5F7FA);
+
+    font-weight:600;
+
+    line-height:1.4;
+
+    letter-spacing:1px;
+
+    text-shadow:none;
+
+}
+
+#page .aizen-group-title.level-1 { font-size:24px; }
+
+#page .aizen-group-title.level-2 { font-size:21px; }
+
+#page .aizen-group-title.level-3 { font-size:18px; }
+
+#page .aizen-group-title.level-4 {
+
+    font-size:16px;
+
+    border-left-color:var(--accent,#D94F70);
+
+}
+
+#page .aizen-group-title.level-5,
+#page .aizen-group-title.level-6,
+#page .aizen-group-title.level-7 {
+
+    font-size:15px;
+
+    border-left-color:var(--accent,#D94F70);
+
+}
+
+#page .aizen-group-title::before,
+#page .aizen-group-title::after {
+
+    content:none;
+
+}
+
+.aizen-group-count {
+
+    margin-left:auto;
+
+    font-size:13px;
+
+    font-weight:400;
+
+    color:var(--text-light,#B8C0D4);
+
+    letter-spacing:0;
+
+}
+
+/* 子文件夹缩进，体现层级 */
+
+.aizen-album .aizen-album {
+
+    margin-left:18px;
+
+    padding-left:16px;
+
+    border-left:1px dashed rgba(255,255,255,.14);
+
+}
+
+
 .aizen-gallery-item {
 
     margin:0;
