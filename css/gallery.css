@@ -1,0 +1,305 @@
+/* ==========================================================
+   Aizen Gallery
+   摄影作品：网格 + 灯箱
+   ========================================================== */
+
+.aizen-gallery {
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+    gap:18px;
+
+    margin-top:24px;
+
+}
+
+
+/* ==========================================================
+   单张作品
+   ========================================================== */
+
+.aizen-gallery-item {
+
+    margin:0;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:var(--radius,18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    transition:var(--transition,.3s ease);
+
+}
+
+.aizen-gallery-item:hover {
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,255,255,.16);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+
+}
+
+.aizen-gallery-link {
+
+    display:block;
+
+    line-height:0;
+
+    cursor:zoom-in;
+
+}
+
+.aizen-gallery-item img {
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .5s ease;
+
+}
+
+.aizen-gallery-item:hover img {
+
+    transform:scale(1.06);
+
+}
+
+.aizen-gallery-caption {
+
+    padding:12px 16px;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    color:var(--text-light,#B8C0D4);
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* ==========================================================
+   页面说明 / 空状态
+   ========================================================== */
+
+/* Learning / Gallery 页面自定义说明文字 */
+.aizen-page-intro {
+
+    margin-top:16px;
+
+    color:var(--text-light,#B8C0D4);
+
+}
+
+.aizen-gallery-empty {
+
+    margin-top:24px;
+
+    padding:38px 26px;
+
+    text-align:center;
+
+    border-radius:var(--radius,18px);
+
+    border:1px dashed rgba(255,255,255,.16);
+
+    color:var(--text-light,#B8C0D4);
+
+}
+
+.aizen-gallery-empty p {
+
+    margin:6px 0;
+
+    color:inherit;
+
+}
+
+
+/* ==========================================================
+   灯箱
+   ========================================================== */
+
+#aizen-lightbox {
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(6,7,14,.92);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+}
+
+#aizen-lightbox.is-open {
+
+    display:flex;
+
+}
+
+#aizen-lightbox .aizen-lightbox-img {
+
+    max-width:88vw;
+
+    max-height:82vh;
+
+    border-radius:12px;
+
+    box-shadow:0 25px 80px rgba(0,0,0,.55);
+
+    object-fit:contain;
+
+}
+
+#aizen-lightbox .aizen-lightbox-caption {
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:24px;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+#aizen-lightbox button {
+
+    position:absolute;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:22px;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:var(--transition,.3s ease);
+
+}
+
+#aizen-lightbox button:hover {
+
+    background:var(--primary,#7A5AF8);
+
+    border-color:var(--primary,#7A5AF8);
+
+}
+
+#aizen-lightbox .aizen-lightbox-close {
+
+    top:24px;
+
+    right:24px;
+
+}
+
+#aizen-lightbox .aizen-lightbox-prev {
+
+    left:24px;
+
+    top:50%;
+
+    margin-top:-23px;
+
+}
+
+#aizen-lightbox .aizen-lightbox-next {
+
+    right:24px;
+
+    top:50%;
+
+    margin-top:-23px;
+
+}
+
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media screen and (max-width:768px) {
+
+    .aizen-gallery {
+
+        grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+
+        gap:12px;
+
+    }
+
+    .aizen-gallery-item img {
+
+        height:150px;
+
+    }
+
+    #aizen-lightbox .aizen-lightbox-prev {
+
+        left:10px;
+
+    }
+
+    #aizen-lightbox .aizen-lightbox-next {
+
+        right:10px;
+
+    }
+
+}
